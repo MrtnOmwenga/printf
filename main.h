@@ -4,10 +4,15 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-/* converter */
-char *convert(unsigned long int num, int base, int lowercase);
+typedef struct Cspecs {
+	char cs;
+	void (*f)();
+} cs_t;
 
-/* _printf */
+void _putchar_c(char c);
+void _putchar(va_list a);
+void print_str(va_list a);
 int _printf(const char *format, ...);
+
 
 #endif
