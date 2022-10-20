@@ -28,13 +28,13 @@ void print_str(va_list a)
 	  }
 }
 
-void print_int()
+void print_int(va_list a)
 {
-  /** int c;
+  int c;
   
-   *c = va_arg(a, int);
+  c = va_arg(a, int);
 
-  *prep_int(c); */
+  prep_int(c);
 }
 /**
  * _printf - prints output according to format
