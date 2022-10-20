@@ -28,9 +28,12 @@ void print_str(va_list a)
 	}
 }
 
-void print_int()
+void print_int(va_list a)
 {
+  int n;
 
+  n = va_arg(a, int);
+  prep_int(n);
 }
 
 
