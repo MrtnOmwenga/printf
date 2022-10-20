@@ -50,9 +50,7 @@ int _printf(const char *format, ...)
 
 	cs_t cspec[] = {
 		{'c', _putchar},
-		{'s', print_str},
-		{'d', print_int},
-		{'i', print_int}
+		{'s', print_str}
 	};
 
 	if (format == NULL)
