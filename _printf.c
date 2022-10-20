@@ -1,86 +1,44 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "main.h"
 
-void _putchar_c(char c)
-{
-	write(1, &c, 1);
-}
-
-void _putchar(va_list a)
-{
-	char c;
-
-	c = va_arg(a, int);
-	write(1, &c, 1);
-}
-
-void print_str(va_list a)
-{
-	char *c;
-
-	c = va_arg(a, char *);
-	while (*c != '\0')
-	  {
-	_putchar_c(*c++);
-	  }
-}
-
-void print_int(va_list a)
-{
-  int c;
-  
-  c = va_arg(a, int);
-
-  prep_int(c);
-}
 /**
- * _printf - prints output according to format
- * @format: string containing charcacters and specifiers
- * Return: length of character output
+ * _printf - produces output according to the format
+ * @format: format string containing the characters and the specifier
+ * Return: length of the output string
  */
-
 int _printf(const char *format, ...)
 {
-	va_list a;
-	int i, j, count;
+	int (*pfunc)(va_list, flags_t *);
+	const char *p;
+	va_list arguments;
+	flags_t flags = {0, 0, 0};
 
-	cs_t cspec[] = {
-		{'c', _putchar},
-		{'s', print_str},
-		{'d', print_int},
-		{'i', print_int}
-	};
+	register int count = 0;
 
-	if (format == NULL)
-		return (0);
-
-	i = j = count = 0;
-	va_start(a, format);
-	while (format[i])
+	va_start(arguments, format);
+	if (!format || (format[0] == '%' && !format[1]))
+		return (-1);
+	if (format[0] == '%' && format[1] == ' ' && !format[2])
+		return (-1);
+	for (p = format; *p; p++)
 	{
-		if (format[i] == '%')
+		if (*p == '%')
 		{
-			j = 0;
-			while (j < 4)
+			p++;
+			if (*p == '%')
 			{
-				if (format[i + 1] == cspec[j].cs &&
-						format[i + 1] != '%')
-				{
-					cspec[j].f(a);
-					i++;
-				}
-				j++;
+				count += _putchar('%');
+				continue;
 			}
-			i++;
-			_putchar_c(format[i]);
-		}
-		else
-			_putchar_c(format[i]);
-		count++;
-		i++;
+			while (get_flag(*p, &flags))
+				p++;
+			pfunc = get_print(*p);
+			count += (pfunc)
+				? pfunc(arguments, &flags)
+				: _printf("%%%c", *p);
+		} else
+			count += _putchar(*p);
 	}
+	_putchar(-1);
+	va_end(arguments);
 	return (count);
 }
