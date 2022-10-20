@@ -11,6 +11,11 @@
 
 void prep_int(int n)
 {
+  if (n < 0)
+    {
+      _putchar_c('-');
+	n = n * -1;
+    }
   if (n / 10)
     {
       prep_int(n / 10);
