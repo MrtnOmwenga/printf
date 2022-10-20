@@ -31,7 +31,7 @@ void print_str(va_list a)
 void print_int(va_list a)
 {
   int c;
-
+  
   c = va_arg(a, int);
 
   prep_int(c);
