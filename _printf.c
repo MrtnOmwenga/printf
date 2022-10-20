@@ -23,16 +23,19 @@ void print_str(va_list a)
 
 	c = va_arg(a, char *);
 	while (*c != '\0')
-	{
-		_putchar_c(*c++);
-	}
+	  {
+	_putchar_c(*c++);
+	  }
 }
 
-void print_int()
+void print_int(va_list a)
 {
+  int c;
 
+  c = va_arg(a, int);
+
+  prep_int(c);
 }
-
 /**
  * _printf - prints output according to format
  * @format: string containing charcacters and specifiers
