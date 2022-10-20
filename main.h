@@ -1,18 +1,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-typedef struct flags
-{
-	int plus;
-	int space;
-	int hash;
-} flags_t;
-
-typedef struct printHandler
-{
-	char c;
-	int (*f)(va_list ap, flags_t *f);
-} ph;
+typedef struct Cspecs {
+	char cs;
+	void (*f)();
+} cs_t;
 
 void _putchar_c(char c);
 void _putchar(va_list a);
