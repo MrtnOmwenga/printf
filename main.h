@@ -1,6 +1,3 @@
-#ifndef MAIN_H
-#define MAIN_H
-
 #include <stdlib.h>
 #include <stdarg.h>
 
@@ -16,4 +13,3 @@ int _printf(const char *format, ...);
 void prep_int(int n);
 void write_int(int n);
 
-#endif
