@@ -33,6 +33,7 @@ void print_int(va_list a)
   int n;
 
   n = va_arg(a, int);
+  
   prep_int(n);
 }
 
@@ -43,7 +44,7 @@ void print_int(va_list a)
  * Return: number of characters printed,
  */
 
-int _printf(const char *format, ...)
+int _printf2(const char *format, ...)
 {
 	va_list a;
 	int i, j, count;
@@ -74,12 +75,15 @@ int _printf(const char *format, ...)
 					i++;
 				}
 				j++;
+				
 			}
 			i++;
 			_putchar_c(format[i]);
 		}
 		else
+		  {
 			_putchar_c(format[i]);
+		  }
 		count++;
 		i++;
 
