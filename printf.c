@@ -34,17 +34,28 @@ int print_str(va_list a)
 
 int print_int(va_list a)
 {
-  int n;
+  int n, k;
   int count = 0;
 
   n = va_arg(a, int);
   
   prep_int(n);
 
-  while (n != 0)
+  k = n;
+
+  if (k < 0)
+    {
+      k = k * -1;
+      ++count;
+    }
+  else if(k == 0)
     {
       ++count;
-      n = n / 10;
+    }
+  while (k != 0)
+    {
+      ++count;
+      k = k / 10;
     }
   return (count);
 }

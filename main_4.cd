@@ -2,6 +2,8 @@
 
 #include <stdlib.h>
 
+#include <limits.h>
+
 #include "main.h"
 
 
@@ -24,10 +26,10 @@ int main(void)
   
 
   
-  len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
-  
-  len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
-  
+  len = _printf("%d", INT_MIN);
+  printf("\n");  
+  len2 = printf("%d", INT_MIN);
+  printf("\n");  
   fflush(stdout);
   
   if (len != len2)
