@@ -12,4 +12,5 @@ int print_str(va_list a);
 int print_int(va_list a);
 int _printf(char *format, ...);
 void prep_int(int n);
+void prep_min(int n, int x, int flag);
 void write_int(int n);

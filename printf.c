@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "main.h"
+#include <limits.h>
 
 void _putchar_c(char c)
 {
@@ -38,8 +39,14 @@ int print_int(va_list a)
   int count = 0;
 
   n = va_arg(a, int);
-  
+  if (n == INT_MIN)
+    {
+      prep_min(n, 1, 1);
+    }
+  else
+    {
   prep_int(n);
+    }
 
   k = n;
 
