@@ -1,16 +1,23 @@
+#ifndef PRINTF
+#define PRINTF
+
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
+#include <limits.h>
 
 typedef struct Cspecs {
 	char cs;
 	int (*f)();
 } cs_t;
 
-void _putchar_c(char c);
-int _putchar(va_list a);
-int print_str(va_list a);
-int print_int(va_list a);
+int _char(va_list a);
+int _str(va_list a);
+int _int(va_list a);
 int _printf(char *format, ...);
-void prep_int(int n);
-void prep_min(int n, int x, int flag);
+void print_int(int n);
+void print_min(int n);
 void write_int(int n);
+
+#endif

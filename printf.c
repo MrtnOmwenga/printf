@@ -1,39 +1,6 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <unistd.h>
 #include "main.h"
-#include <limits.h>
 
-void _putchar_c(char c)
-{
-	write(1, &c, 1);
-}
-
-int _putchar(va_list a)
-{
-  char c;
-  int count = 1;
-	c = va_arg(a, int);
-	write(1, &c, 1);
-	return (count);
-}
-
-int print_str(va_list a)
-{
-	char *c;
-	int count = 0;
-
-	c = va_arg(a, char *);
-	while (*c != '\0')
-	{
-		_putchar_c(*c++);
-		++count;
-	}
-	return (count);
-}
-
-int print_int(va_list a)
+int _int(va_list a)
 {
   int n, k;
   int count = 0;
@@ -41,11 +8,11 @@ int print_int(va_list a)
   n = va_arg(a, int);
   if (n == INT_MIN)
     {
-      prep_min(n, 1, 1);
+      print_min(n);
     }
   else
     {
-  prep_int(n);
+  print_int(n);
     }
 
   k = n;
@@ -80,10 +47,10 @@ int _printf(char *format, ...)
 	int i, j, count;
 
 	cs_t cspec[] = {
-		{'c', _putchar},
-		{'s', print_str},
-		{'d', print_int},
-		{'i', print_int}
+		{'c', _char},
+		{'s', _str},
+		{'d', _int},
+		{'i', _int}
 	};
 
 	if (format == NULL)
@@ -108,8 +75,8 @@ int _printf(char *format, ...)
 		}
 		else
 		  {
-			_putchar_c(format[i]);
-			count = count + 1;
+			putchar(format[i]);
+			count++;
 		  }
 		
 		i++;
