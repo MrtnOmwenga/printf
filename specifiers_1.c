@@ -10,7 +10,7 @@
 
 int _binary(va_list a)
 {
-  int integer, x, binary[200], count = 0;
+  int integer, x = 0, binary[200], count = 0;
 
   integer = va_arg(a, int);
   if (integer < 0)
@@ -20,6 +20,7 @@ int _binary(va_list a)
   else if (integer == 0)
     {
       binary[x] = 0;
+      x++;
     }
   for (x = 0; integer > 0; x++)
     {
