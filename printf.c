@@ -37,7 +37,9 @@ int _printf(char *format, ...)
 		  if (format[i + 1] == '%')
 		    {
 		      _putchar('%');
+		      i = i + 2;
 		      count++;
+		      continue;
 		    }
 
 		  if (va_arg(b, int) == (char)0 && format[i + 1] == 's')
@@ -69,4 +71,3 @@ int _printf(char *format, ...)
 	}
 	return (count);
 }
-
