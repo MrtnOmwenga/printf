@@ -50,12 +50,18 @@ int _printf(char *format, ...)
 		      continue;
 		    }
 		  
-		  for (j = 0; j < 4; j++)
+		  for (j = 0; j <= 4; j++)
 			{
+			  if (j == 4)
+			    {
+			      _putchar('%');
+			      count++;
+			    }
 			  if (format[i + 1] == cspec[j].cs)
 			    {
 			      count = count + cspec[j].f(a);
 			      i++;
+			      break;
 			    }
 	       
 			}
