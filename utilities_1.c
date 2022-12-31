@@ -42,19 +42,18 @@ int binary(int integer)
 
 int c_binary(int integer)
 {
-  int binary[200], count, x;
+  int binary[32], count, x;
 
   for (x = 0; integer > 0; x++)
     {
-      if (integer % 2 == 0)
-	{
-	  binary[x] = 1;
-	}
-      else
-	{
-	  binary[x] = 0;
-	}
+      binary[x] = integer % 2;
       integer /= 2; 
+    }
+  
+  while (x < 32)
+    {
+      binary[x] = 1;
+      x++;
     }
 
   count = x;
