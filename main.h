@@ -12,10 +12,14 @@ typedef struct Cspecs {
 	int (*f)();
 } cs_t;
 
+/*printf functions*/
 int _char(va_list a);
 int _str(va_list a);
 int _int(va_list a);
+int _binary(va_list a);
 int _printf(char *format, ...);
+
+/*utilities*/
 void _putchar(char c);
 void print_int(int n);
 void print_min(int n);
