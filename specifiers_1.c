@@ -10,29 +10,18 @@
 
 int _binary(va_list a)
 {
-  int integer, x = 0, binary[200], count = 0;
+  int integer, count = 0;
 
   integer = va_arg(a, int);
+
   if (integer < 0)
     {
-      integer = -integer;
+      count = c_binary(-integer);
     }
-  else if (integer == 0)
+  else
     {
-      _putchar(0 + '0');
-      return (1);
-    }
-  for (x = 0; integer > 0; x++)
-    {
-      binary[x] = integer % 2;
-      integer /= 2;
-    }
-
-  count = x;
-  for (x = x - 1; x >= 0; x--)
-    {
-      _putchar(binary[x] + '0');
+      count = binary(integer);
     }
   
-  return(count--);
+  return(count);
 }

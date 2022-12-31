@@ -26,5 +26,7 @@ void print_min(int n);
 void write_int(int n);
 int count(int n);
 void print_null();
+int binary(int integer);
+int c_binary(int integer);
 
 #endif
