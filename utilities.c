@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *printf_null- Prints "null"
+ *print_null- Prints "null"
  *
  */
 
@@ -33,7 +33,7 @@ int count(int n)
       n = -n;
       result++;
     }
-  if (result == 0)
+  else if (n == 0)
     {
       result++;
     }
@@ -63,8 +63,6 @@ void _putchar(char c)
  *print_min- Loops through INT_MIN
  *
  *@n: INT_MIN
- *@x: counter
- *@flag: flag
  *
  */
 
