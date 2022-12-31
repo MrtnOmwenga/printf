@@ -19,11 +19,17 @@ int _printf(char *format, ...)
 	};
 
 	if (format == NULL)
-		return (0);
+	  return (0);
 
 	i = j = count = 0;
 	va_start(a, format);
 	va_start(b, format);
+
+	if (a == NULL)
+	  {
+	    return (0);
+	  }
+	
 	while (format[i])
 	{
 	  if (format[i] == '%')
@@ -34,7 +40,7 @@ int _printf(char *format, ...)
 		      count++;
 		    }
 
-		  if (va_arg(b, int) == (char)0)
+		  if (va_arg(b, int) == (char)0 && format[i + 1] == 's')
 		    {
 		      print_null();
 		      i = i + 2;
