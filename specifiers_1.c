@@ -19,8 +19,8 @@ int _binary(va_list a)
     }
   else if (integer == 0)
     {
-      binary[x] = 0;
-      x++;
+      _putchar(0 + '0');
+      return (1);
     }
   for (x = 0; integer > 0; x++)
     {
