@@ -38,6 +38,7 @@ int _printf(char *format, ...)
 		    {
 		      print_null();
 		      i = i + 2;
+		      count = count + 6;
 		      continue;
 		    }
 		  
