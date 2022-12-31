@@ -54,15 +54,13 @@ void _putchar(char c)
 
 void print_min(int n)
 {
-  _putchar('-');
-  n = n * -1;
   
   if (n / 10)
     {
       print_min(n / 10);
     }
 
-  write_int((n % 10) + '0');
+  write_int('0' - (n % 10));
 }
 
 /**

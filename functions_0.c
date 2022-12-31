@@ -15,6 +15,7 @@ int _int(va_list a)
   n = va_arg(a, int);
   if (n == INT_MIN)
     {
+      _putchar('-');
       print_min(n); 
     }
   else
