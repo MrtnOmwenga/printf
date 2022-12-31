@@ -37,7 +37,7 @@ int _printf(char *format, ...)
 		  if (va_arg(b, int) == (char)0)
 		    {
 		      print_null();
-		      i++;
+		      i = i + 2;
 		      continue;
 		    }
 		  
