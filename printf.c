@@ -36,7 +36,7 @@ int _printf(char *format, ...)
 
 		  if (va_arg(b, int) == (char)0)
 		    {
-		      printf_null();
+		      print_null();
 		      i++;
 		      continue;
 		    }
