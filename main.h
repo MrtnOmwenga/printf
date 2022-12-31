@@ -21,5 +21,6 @@ void print_int(int n);
 void print_min(int n);
 void write_int(int n);
 int count(int n);
+void print_null();
 
 #endif

@@ -1,6 +1,22 @@
 #include "main.h"
 
 /**
+ *printf_null- Prints "null"
+ *
+ */
+
+void print_null()
+{
+  char nul[7] = "(null)";
+  int i;
+  
+  for (i = 0; i < 6; i++)
+    {
+      _putchar(nul[i]);
+    }
+}
+
+/**
  *count- Counts number of digits in a number
  *
  *@n: number
