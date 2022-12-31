@@ -16,8 +16,10 @@ int _char(va_list a);
 int _str(va_list a);
 int _int(va_list a);
 int _printf(char *format, ...);
+void _putchar(char c);
 void print_int(int n);
 void print_min(int n);
 void write_int(int n);
+int count(int n);
 
 #endif

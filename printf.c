@@ -1,40 +1,5 @@
 #include "main.h"
 
-int _int(va_list a)
-{
-  int n, k;
-  int count = 0;
-
-  n = va_arg(a, int);
-  if (n == INT_MIN)
-    {
-      print_min(n);
-    }
-  else
-    {
-  print_int(n);
-    }
-
-  k = n;
-
-  if (k < 0)
-    {
-      k = k * -1;
-      ++count;
-    }
-  else if(k == 0)
-    {
-      ++count;
-    }
-  while (k != 0)
-    {
-      ++count;
-      k = k / 10;
-    }
-  return (count);
-}
-
-
 /**
  * _printf - outputs according to a format.
  * @format: input string.
@@ -75,7 +40,7 @@ int _printf(char *format, ...)
 		}
 		else
 		  {
-			putchar(format[i]);
+			_putchar(format[i]);
 			count++;
 		  }
 		

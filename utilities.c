@@ -1,6 +1,49 @@
 #include "main.h"
 
 /**
+ *count- Counts number of digits in a number
+ *
+ *@n: number
+ *
+ *Return: count
+ */
+
+int count(int n)
+{
+  int result = 0;
+  
+  if (n < 0)
+    {
+      n = -n;
+      result++;
+    }
+  if (result == 0)
+    {
+      result++;
+    }
+
+  while (n != 0)
+    {
+      n = n / 10;
+      result++;
+    }
+
+  return (result);
+}
+
+/**
+ *_putchar- Pritns character
+ *
+ *@c: Charactter to be printed
+ *
+ */
+
+void _putchar(char c)
+{
+  write(1, &c, 1);
+}
+
+/**
  *print_min- Loops through INT_MIN
  *
  *@n: INT_MIN
@@ -11,7 +54,7 @@
 
 void print_min(int n)
 {
-  putchar('-');
+  _putchar('-');
   n = n * -1;
   
   if (n / 10)
@@ -34,7 +77,7 @@ void print_int(int n)
 {
   if (n < 0)
     {
-      putchar('-');
+      _putchar('-');
       n = -n;
     }
   if (n / 10)
