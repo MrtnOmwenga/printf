@@ -27,10 +27,14 @@ int _printf(char *format, ...)
 	{
 		if (format[i] == '%')
 		{
+		  if (format[i + 1] == '%')
+		    {
+		      _putchar('%');
+		      count++;
+		    }
 		  for (j = 0; j < 4; j++)
 			{
-				if (format[i + 1] == cspec[j].cs &&
-				    format[i + 1] != '%')
+				if (format[i + 1] == cspec[j].cs)
 				{
 					count = count + cspec[j].f(a);
 					i++;
