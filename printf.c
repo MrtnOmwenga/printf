@@ -95,28 +95,16 @@ int _printf(char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			j = 0;
-			while (j < 4)
+		  for (j = 0; j < 4; j++)
 			{
 				if (format[i + 1] == cspec[j].cs &&
-				    format[i + 1] != '%' && cspec[j].cs == 'c' && i == 0)
+				    format[i + 1] != '%')
 				{
 					count = count + cspec[j].f(a);
-					return (count);
 					i++;
 				}
-				else if(format[i + 1] == cspec[j].cs &&
-					format [i + 1] != '%')
-				  {
-				    count = count + cspec[j].f(a);
-				    /*return (count);*/
-				    i++;
-				  }
-				j++;
-				
+	       
 			}
-			/*i++;*/
-			/*_putchar_c(format[i]);*/
 		}
 		else
 		  {
