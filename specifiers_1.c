@@ -48,12 +48,12 @@ int _uint(va_list a)
 {
   unsigned int n, k;
   
-  n = va_arg(a, unsigned int);
-  k = n;
+  n = (unsigned int)va_arg(a, unsigned int);
 
-  print_int(n);
+  k = n;
+  print_uint(n);
   
-  return (count((int)k));
+  return (count(k));
 }
 
 /**

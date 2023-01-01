@@ -100,6 +100,21 @@ void print_int(int n)
 }
 
 /**
+ *print_uint- prints uint
+ *
+ *@n: Number to be printed
+ */
+
+void print_uint(unsigned int n)
+{
+  if (n / 10)
+    {
+      print_uint(n / 10);
+    }
+  write_int((n % 10) + '0');
+}
+
+/**
  *write_int- Prints a number
  *
  *@n: Number to be printed
