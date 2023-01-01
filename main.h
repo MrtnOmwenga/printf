@@ -17,6 +17,8 @@ int _char(va_list a);
 int _str(va_list a);
 int _int(va_list a);
 int _binary(va_list a);
+int _uint(va_list a);
+int _octal(va_list a);
 int _printf(char *format, ...);
 
 /*utilities*/

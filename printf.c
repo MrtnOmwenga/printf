@@ -16,7 +16,9 @@ int _printf(char *format, ...)
 		{'s', _str},
 		{'d', _int},
 		{'i', _int},
-		{'b', _binary}
+		{'b', _binary},
+		{'u', _uint},
+		{'o', _octal}
 	};
 
 	if (format == NULL)
@@ -51,9 +53,9 @@ int _printf(char *format, ...)
 		      continue;
 		    }
 		  
-		  for (j = 0; j <= 5; j++)
+		  for (j = 0; j <= 7; j++)
 			{
-			  if (j == 5)
+			  if (j == 7)
 			    {
 			      _putchar('%');
 			      count++;
