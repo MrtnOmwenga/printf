@@ -12,7 +12,7 @@ typedef struct Cspecs {
 	int (*f)();
 } cs_t;
 
-/*printf functions*/
+/*printf conversion specifier functions*/
 int _char(va_list a);
 int _str(va_list a);
 int _int(va_list a);
@@ -26,7 +26,5 @@ void print_min(int n);
 void write_int(int n);
 int count(int n);
 void print_null();
-int binary(int integer);
-int c_binary(int integer);
 
 #endif
