@@ -47,17 +47,11 @@ int _octal(va_list a)
 int _uint(va_list a)
 {
   unsigned int n, k;
-  int b;
   
   n = va_arg(a, unsigned int);
   k = n;
-  b = (int)n;
-  
-  if (b < 0)
-    {
-      b = -b;
-    }
-  print_int(b);
+
+  print_int(n);
   
   return (count((int)k));
 }
