@@ -28,6 +28,7 @@ void print_uint(unsigned int n);
 void print_min(int n);
 void write_int(int n);
 int count(int n);
+int ucount(unsigned int n);
 void print_null();
 
 #endif

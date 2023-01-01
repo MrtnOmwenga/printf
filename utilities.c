@@ -48,6 +48,32 @@ int count(int n)
 }
 
 /**
+ *ucount- Prints no od digits in unsigned integer
+ *
+ *@n: Unsigned integer
+ *
+ *Return: Number of digits
+ */
+
+int ucount(unsigned int n)
+{
+  int result = 0;
+
+  if (n == 0)
+    {
+      result++;
+    }
+
+  while (n != 0)
+    {
+      n /= 10;
+      result++;
+    }
+
+  return (result);
+}
+
+/**
  *_putchar- Pritns character
  *
  *@c: Charactter to be printed

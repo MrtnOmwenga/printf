@@ -53,7 +53,7 @@ int _uint(va_list a)
   k = n;
   print_uint(n);
   
-  return (count(k));
+  return (ucount(k));
 }
 
 /**
