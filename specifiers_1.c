@@ -50,8 +50,15 @@ int _uint(va_list a)
 
   n = va_arg(a, unsigned int);
   k = n;
-  
-  print_int((int)-n);
+
+  if ((int)n < 0)
+    {
+      print_int((int)-n);
+    }
+  else
+    {
+      print_int((int)-n);
+    }
   
   return (count((int)k));
 }
