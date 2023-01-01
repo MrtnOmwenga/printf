@@ -20,6 +20,7 @@ int _binary(va_list a);
 int _uint(va_list a);
 int _octal(va_list a);
 int _hex(va_list a);
+int _HEX(va_list a);
 int _printf(char *format, ...);
 
 /*utilities*/
