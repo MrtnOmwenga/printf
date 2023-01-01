@@ -18,7 +18,8 @@ int _printf(char *format, ...)
 		{'i', _int},
 		{'b', _binary},
 		{'u', _uint},
-		{'o', _octal}
+		{'o', _octal},
+		{'x', _hex}
 	};
 
 	if (format == NULL)
@@ -53,9 +54,9 @@ int _printf(char *format, ...)
 		      continue;
 		    }
 		  
-		  for (j = 0; j <= 7; j++)
+		  for (j = 0; j <= 8; j++)
 			{
-			  if (j == 7)
+			  if (j == 8)
 			    {
 			      _putchar('%');
 			      count++;
