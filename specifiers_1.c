@@ -10,9 +10,10 @@
 
 int _octal(va_list a)
 {
-  int integer, octal[32], x, count = 0;
-
-  integer = va_arg(a, int);
+  unsigned int integer, octal[32];
+  int x, count;
+  
+  integer = va_arg(a, unsigned int);
   
   if (integer == 0)
     {
@@ -27,7 +28,7 @@ int _octal(va_list a)
     }
 
   count = x;
-  for (x = x - 1; x >= 0; x++)
+  for (x = x - 1; x >= 0; x--)
     {
       _putchar(octal[x] + '0');
     }
@@ -50,7 +51,7 @@ int _uint(va_list a)
   n = va_arg(a, unsigned int);
   k = n;
   
-  print_int((int)n);
+  print_int((int)-n);
   
   return (count((int)k));
 }
